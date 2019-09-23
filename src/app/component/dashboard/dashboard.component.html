@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-xxxl-3 col-xxl-3 col-lg-3 col-md-3">
+        <nb-card>
+
+                <div class="row">
+                        <div class="col-sm-8"><h5 class="p-2">Income</h5></div>
+                        <div class="col-sm-4"><p class="p-1 mt-1">Last 365days</p></div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-12 mr-4">
+                                <ngx-charts-bar-vertical
+                                [view]="view"
+                              
+                                [results]="single"
+                                [gradient]="gradient"
+                        
+                               
+                               
+                                [showYAxisLabel]="showYAxisLabel"
+                                [xAxisLabel]="xAxisLabel"
+                                [yAxisLabel]="yAxisLabel"
+                                (select)="onSelect($event)">
+                                </ngx-charts-bar-vertical>
+
+                          </div>
+
+                      </div>
+
+
+                      
+        </nb-card>
+
+    </div>
+    <div class="col-xxxl-3 col-xxl-3 col-lg-3 col-md-3">
+            <nb-card>
+
+                    <div class="row">
+                            <div class="col-sm-8"><h5 class="p-2">Expense</h5></div>
+                            <div class="col-sm-4"><p class="p-1 mt-1">Last Month</p></div>
+                          </div>
+
+
+                          <div class="row">
+                                <div class="col-12 mr-4 ">
+                                    <h1 class="m-2 p-2">40000</h1>
+                                </div>
+                                <div class="col-12 mr-4 mb-5">
+                                        <canvas baseChart
+                                        [data]="pieChartData"
+                                    
+                                        [chartType]="pieChartType"
+                                        [options]="pieChartOptions"
+                                        [plugins]="pieChartPlugins"
+                                        [colors]="pieChartColors"
+                                        [legend]="pieChartLegend">
+                                      </canvas>
+                                </div>
+                          </div>
+</nb-card>
+
+           
+       </div>
+       <div class="col-xxxl-3 col-xxl-3 col-lg-3 col-md-3">
+            <nb-card>
+
+                    <div class="row">
+                            <div class="col-sm-8"><h5 class="p-2">Transcation</h5></div>
+                            <div class="col-sm-4"><p class="p-1 mt-1">Last Month</p></div>
+                          </div>
+
+
+                          
+                          <div class="row">
+                                <div class="col-12 mr-4 mr-4 mb-5 ">
+
+                                        <canvas baseChart
+                                        height="57vh" width="80vw"
+                                        [data]="doughnutChartData"
+                                        [labels]="doughnutChartLabels"
+                                        [chartType]="doughnutChartType">
+                                </canvas>
+                                </div></div>
+</nb-card>
+
+
+
+       </div>
+       <div class="col-xxxl-3 col-xxl-3 col-lg-3 col-md-3">
+            <nb-card>
+
+                    <div class="row">
+                            <div class="col-sm-8"><h5 class="p-2">Sales</h5></div>
+                            <div class="col-sm-4"><p class="p-1 mt-1">Last Month</p></div>
+                          </div>
+
+
+                          <div class="row">
+                              <div class="col-12 mr-4 mr-4 mb-5">
+                                <canvas baseChart   height="57vh" width="80vw"
+                                            [datasets]="lineChartData"
+                                            [labels]="lineChartLabels"
+                                            [options]="lineChartOptions"
+                                            [colors]="lineChartColors"
+                                            [legend]="lineChartLegend"
+                                            [chartType]="lineChartType"
+                                            [plugins]="lineChartPlugins"
+                                            (chartHover)="chartHovered($event)"
+                                            (chartClick)="chartClicked($event)"></canvas>
+                                        </div>
+                                </div>
+                          </nb-card>
+       </div>
+
+    </div>
